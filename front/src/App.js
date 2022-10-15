@@ -1,13 +1,24 @@
 import './App.css';
 import React from 'react';
+import Header from './components/Header';
+import { Footer } from './components/Footer';
 
 
 
 function App() {
   return (
     <div className="App">
-      <h1>Tienda de Mascotas Vety Shop</h1>
-      <img src="./images/VetyShop.png" alt="Aqui va el logo"></img>
+      <Header />
+      <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <center>Contenido aqui</center>
+        <Footer/>
     </div>
   );
 }
