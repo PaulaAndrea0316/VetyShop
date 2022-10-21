@@ -8,7 +8,7 @@ import { ALL_PRODUCTS_REQUEST,ALL_PRODUCTS_SUCCESS,
             case ALL_PRODUCTS_REQUEST:
                 return{
                     loading:true,
-                    products:[]
+                    productos:[]
                 }
 
                 case ALL_PRODUCTS_SUCCESS:
