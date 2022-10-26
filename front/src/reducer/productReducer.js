@@ -4,59 +4,26 @@ import { ALL_PRODUCTS_REQUEST,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
-    CLEAR_ERRORS} from "../constants/productConstants";   
+    CLEAR_ERRORS} from "../constants/productConstants";
 
-
-
-    export const productsReducer = (state ={ products: []}, action)=>{
-        switch(action.type){
-            case ALL_PRODUCTS_REQUEST:
-                return{
-                    loading:true,
-                    productos:[]
-                }
-
-                case ALL_PRODUCTS_SUCCESS:
-                    return{
-                        loading:false,
-                        productos: action.payload.productos,
-                        cantidad: action.payload.cantidad
-                    }
-        
-                case ALL_PRODUCTS_FAIL:
-                    return{
-                        loading:false,
-                        error: action.payload
-                    }
-        
-                case CLEAR_ERRORS:
-                    return{
-                        ...state,
-                        error:null
-                    }
-        
-                default:
-                    return state;
-            }
-        }
-//REDUCER PARA TENER TODOS LOS DETALLES
-export const productDetailsReducer = (state ={ product: {}}, action)=>{
+export const productsReducer = (state ={ products: []}, action)=>{
     switch(action.type){
-        case PRODUCT_DETAILS_REQUEST:
+        case ALL_PRODUCTS_REQUEST:
             return{
-                ...state,
-                loading:true
+                loading:true,
+                productos:[]
             }
 
-        case PRODUCT_DETAILS_SUCCESS:
+        case ALL_PRODUCTS_SUCCESS:
             return{
                 loading:false,
-                product: action.payload.product,
+                productos: action.payload.productos,
+                cantidad: action.payload.cantidad
             }
 
-        case PRODUCT_DETAILS_FAIL:
+        case ALL_PRODUCTS_FAIL:
             return{
-                ...state,
+                loading:false,
                 error: action.payload
             }
 
@@ -69,5 +36,38 @@ export const productDetailsReducer = (state ={ product: {}}, action)=>{
 
         default:
             return state;
+    }
+}
+
+//REDUCER PARA TENER TODOS LOS DETALLES
+export const productDetailsReducer = (state = { product: {} }, action) => {
+    switch (action.type) {
+
+        case PRODUCT_DETAILS_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+
+        case PRODUCT_DETAILS_SUCCESS:
+            return {
+                loading: false,
+                product: action.payload
+            }
+
+        case PRODUCT_DETAILS_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state
     }
 }
