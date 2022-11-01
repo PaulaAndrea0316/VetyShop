@@ -73,11 +73,12 @@ import {Link } from "react-router-dom"
                 </Fragment>
             })
         })
-
         return data;
     }
 
     return (
+
+
         <Fragment>
             <MetaData title={'All Products'} />
             <div className="row">
@@ -102,6 +103,8 @@ import {Link } from "react-router-dom"
                     </Fragment>
                 </div>
             </div>
+           
+
 
         </Fragment>
     )
