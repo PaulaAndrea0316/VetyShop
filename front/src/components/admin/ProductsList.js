@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../actions/productActions'
 import {Link } from "react-router-dom"
 
-export const ProductsList = () => {
+    const ProductsList = () => {
     const { loading, productos, error} = useSelector(state=> state.products)
     const alert= useAlert();
 
@@ -87,7 +87,6 @@ export const ProductsList = () => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">All Products</h1>
                         <h1 className="my-5">Productos Registrados</h1>
 
                         {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
